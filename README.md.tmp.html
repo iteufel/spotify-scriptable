@@ -1,0 +1,12 @@
+<h1>Spotify Scriptable</h1>
+
+<p>Controll your Spotify Connect Speakers using Scriptable.</p>
+
+<pre><code>let Spotify = importModule('lib.spotify')
+const client = new Spotify('client_id', 'client_secret');
+await client.init();
+const devices = await client.devices();
+const testDevice = devices.find(e =&gt; e.name === 'Schlafzimmer');
+await testDevice.volume(10);
+await testDevice.play('spotify:track:0ZZ8VoqXHmTtS6EDmkIxbP');
+</code></pre>
